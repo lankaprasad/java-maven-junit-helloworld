@@ -114,9 +114,11 @@ pipeline {
 					echo 'Push to docker hub'
 
 					sh "docker login -u $DOCKER_CREDS_USR -p $DOCKER_CREDS_PSW"
-
-					sh "docker push $dev_repo_name"
+	
+					sh "docker tag $dev_repo_name prasadlanka/$dev_repo_name:latest"
 					sh "docker push prasadlanka/$dev_repo_name:latest"
+					sh "docker rmi -f $dev_repo_name:latest"
+					sh "docker rmi -f prasadlanka/$dev_repo_name:latest"
 
 				}
 
