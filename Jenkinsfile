@@ -95,7 +95,7 @@ pipeline {
 				script {
 
 					echo 'Build Artifacts'
-
+					sh "sudo usermod -aG docker jenkins"
 					sh "docker build -t $dev_repo_name ."
 
 				}
