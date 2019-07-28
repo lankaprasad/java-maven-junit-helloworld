@@ -96,7 +96,7 @@ pipeline {
 
 					echo 'Build Artifacts'
 
-					sh "docker build -t $(dev_repo_name) ."
+					sh "docker build -t $dev_repo_name ."
 
 				}
 
