@@ -116,7 +116,7 @@ pipeline {
 
 					sh "docker login -u $DOCKER_CREDS_USR -p $DOCKER_CREDS_PSW"
 
-					sh "docker push $(dev_repo_name)"
+					sh "docker push $dev_repo_name"
 
 				}
 
